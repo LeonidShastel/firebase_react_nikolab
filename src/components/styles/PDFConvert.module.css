@@ -1,0 +1,107 @@
+.container{
+    width: 210mm;
+    height: 260mm;
+    font-size: 14px;
+}
+
+.header{
+    border-bottom: 5px solid black;
+    display: flex;
+}
+
+.contacts,.licenced{
+    width: 30%;
+    font-size: .8rem;
+}
+
+.contacts,.licenced,.title{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contacts>*{
+    margin-bottom: 10px;
+}
+
+.title{
+    width: 40%;
+    font-size: .6rem;
+}
+
+.info{
+    display: flex;
+    align-items: center;
+}
+
+.section{
+    padding: 10px 20px;
+}
+
+.patient_info{
+    width: 60%;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+}
+
+.patient_info>*{
+    margin-bottom: 20px;
+
+}
+
+.info_block_aver{
+    display: flex;
+    align-items: center;
+}
+
+.info_block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section_nav{
+    background-color: lightgray;
+    font-weight: bold;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+}
+
+.section_result{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.section_result>*{
+    width: 31.5%;
+}
+
+.main{
+    border-bottom: 5px solid black;
+}
+
+.footer{
+    /*text-align: center;*/
+}
+
+.footer_section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    margin-bottom: 40px;
+}
+
+@media print {
+    @page
+    {
+        size: auto;   /* auto is the initial value */
+        margin: 0mm;  /* this affects the margin in the printer settings */
+    }
+}

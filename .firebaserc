@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "niko-labs-6db4e"
+  },
+  "targets": {
+    "niko-labs-6db4e": {
+      "hosting": {
+        "nikolab": [
+          "niko-labs-6db4e"
+        ]
+      }
+    }
+  }
+}

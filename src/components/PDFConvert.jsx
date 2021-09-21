@@ -80,36 +80,57 @@ const PdfConvert = () => {
                 <main className={styles.main}>
                     <section className={styles.info}>
                         <div className={styles.patient_info}>
-                            <div className={styles.info_block}>
-                                <span>Пацієнт: </span>
-                                <span>Patient: {patient.PATIENT_NAME + ' ' + patient.DATE_BIRTH.split('-').reverse().join('.') + ' ' + patient.PASSPORT_CODE}</span>
+                            <div className={styles.info_block_aver} style={{alignItems:"flex-end"}}>
+                                <div className={styles.info_block_inner}>
+                                    <span>Пацієнт: </span>
+                                    <span>Patient: </span>
+                                </div>
+                                <div>
+                                    <span><b>{patient.PATIENT_NAME + ' ' + patient.DATE_BIRTH.split('-').reverse().join('.') + ' ' + patient.PASSPORT_CODE}</b></span>
+                                </div>
                             </div>
-                            <div className={styles.info_block}>
-                                <span>Стать: {patient.SEX === 'Male' ? 'Чоловіча' : 'Жіночий'} /</span>
-                                <span>Sex: {patient.SEX}</span>
+                            <div className={styles.info_block_aver}>
+                                <div className={styles.info_block_inner}>
+                                    <span>Стать:</span>
+                                    <span>Sex:</span>
+                                </div>
+                                <div className={styles.info_block_inner}>
+                                    <span><b>{patient.SEX === 'Male' ? 'Чоловіча' : 'Жіночий'} /</b></span>
+                                    <span><b>{patient.SEX}</b></span>
+                                </div>
                             </div>
                             <div className={styles.info_block_aver}>
                                 <div className={styles.info_block}>
                                     <span>Замовлення:</span>
                                     <span>Order:</span>
                                 </div>
-                                <span>{order}</span>
+                                <div>
+                                    <span><b>{order}</b></span>
+                                </div>
                             </div>
                             <div className={styles.info_block_aver}>
                                 <div className={styles.info_block}>
                                     <span>Дата реєстрації:</span>
                                     <span>Registration Date:</span>
                                 </div>
-                                <span>{patient.COLLECTION_TIME}</span>
+                                <div>
+                                    <span><b>{patient.COLLECTION_TIME}</b></span>
+                                </div>
                             </div>
-                            <div className={styles.info_block}>
-                                <span>Матеріал: Назо- та/або орофарингеальний мазок /</span>
-                                <span>Material: Nasal and/or oropharyngeal swab</span>
+                            <div className={styles.info_block_aver}>
+                                <div className={styles.info_block_inner}>
+                                    <span>Матеріал: </span>
+                                    <span>Material: </span>
+                                </div>
+                                <div className={styles.info_block_inner}>
+                                    <span><b>Назо- та/або орофарингеальний мазок /</b></span>
+                                    <span><b>Nasal and/or oropharyngeal swab</b></span>
+                                </div>
                             </div>
                         </div>
-                        <div >
+                        <div>
                             <img
-                                src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://nikolabs.web.app/${order}`}
+                                src={`https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://nikolabs.web.app/${order}`}
                                 alt={'QR Code'}/>
                         </div>
                     </section>
@@ -127,13 +148,13 @@ const PdfConvert = () => {
                         </div>
                         <div className={styles.section_result}>
                             <div>
-                                ПЛР. Визначення РНК
-                                Коронавірусу SARS-CoV-2 COVID19 методом зворотньої
-                                транскрипції / Real-Time
-                                Polymerase Chain Reaction (RTPCR) detecting RNA of the SARSCoV-2 virus
-                                Real-Time Polymerase Chain
-                                Reaction (RT-PCR) detecting RNA
-                                of the SARS-CoV-2 virus
+                                <b>ПЛР. Визначення РНК
+                                    Коронавірусу SARS-CoV-2 COVID19 методом зворотньої
+                                    транскрипції / Real-Time
+                                    Polymerase Chain Reaction (RTPCR) detecting RNA of the SARSCoV-2 virus
+                                    Real-Time Polymerase Chain
+                                    Reaction (RT-PCR) detecting RNA
+                                    of the SARS-CoV-2 virus</b>
                             </div>
                             <div>
                                 (-) негативний / (-) negative
@@ -161,15 +182,22 @@ const PdfConvert = () => {
                             <h3>NOTES:</h3>
                             <h4>ПРИМІТКИ:</h4>
                         </div>
-                        <div>
-                            <div className={styles.info_block}>
-                                <span>Validator: M. Purska</span>
-                                <span>Валідатор: М. Пурська</span>
+                        <div className={styles.footer_info}>
+                            <div className={styles.info_block} style={{textAlign: "right"}}>
+                                <span>Validator:</span>
+                                <span>Валідатор:</span>
                             </div>
-                            <span>{patient.RESULT_TIME}</span>
+                            <div>
+                                <span>
+                                    M. Purska М. Пурська
+                                </span>
+                            </div>
+                            <div>
+                                <span><i>{patient.RESULT_TIME}</i></span>
+                            </div>
                         </div>
                     </section>
-                    <div style={{textAlign: "center"}}>
+                    <div style={{textAlign: "center", fontStyle: "italic"}}>
                         The test results are not a clinical diagnosis and require medical advice.<br/>
                         Результати досліджень не є клінічним діагнозом і потребують консультації Лікаря
                     </div>

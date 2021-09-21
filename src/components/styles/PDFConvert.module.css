@@ -42,7 +42,7 @@
 
 .patient_info{
     width: 60%;
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding: 10px 20px;
 }
 
@@ -56,10 +56,19 @@
     align-items: center;
 }
 
+.info_block_aver>div:first-child{
+    margin-right: 20px;
+}
+
 .info_block{
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.info_block_inner{
+    display: flex;
+    flex-direction: column;
 }
 
 .section_nav{
@@ -75,7 +84,7 @@
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
-    font-weight: bold;
+    font-size: 1rem;
 }
 
 .section_result>*{
@@ -96,6 +105,11 @@
     align-items: center;
     padding: 10px 20px;
     margin-bottom: 40px;
+}
+
+.footer_info>*{
+    margin-bottom: 10px;
+    padding-right: 100px;
 }
 
 @media print {
